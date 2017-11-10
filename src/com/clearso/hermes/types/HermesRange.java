@@ -1,4 +1,4 @@
-package org.naertui.hermes.types;
+package com.clearso.hermes.types;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

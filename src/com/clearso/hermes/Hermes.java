@@ -1,4 +1,4 @@
-package org.naertui.hermes;
+package com.clearso.hermes;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 import java.util.TimeZone;
 
-import org.naertui.hermes.HermesDbHolder;
+import com.clearso.hermes.HermesDbHolder;
 
 public class Hermes {
 

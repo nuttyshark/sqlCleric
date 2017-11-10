@@ -12,10 +12,10 @@ import_map = {
     'ArrayList':'java.util.ArrayList',
     'Arrays':'java.util.Arrays',
     'JSONObject':'com.alibaba.fastjson.JSONObject',
-    'HermesArray':'org.naertui.hermes.HermesArray',
-    'HermesRange':'org.naertui.hermes.types.HermesRange',
-    'HermesMap':'org.naertui.hermes.HermesMap',
-    'HermesDay':'org.naertui.hermes.types.HermesDay'
+    'HermesArray':'com.clearso.hermes.HermesArray',
+    'HermesRange':'com.clearso.hermes.types.HermesRange',
+    'HermesMap':'com.clearso.hermes.HermesMap',
+    'HermesDay':'com.clearso.hermes.types.HermesDay'
 }
 
 sw = [False]

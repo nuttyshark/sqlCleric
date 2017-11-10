@@ -1,4 +1,4 @@
-package org.naertui.hermes.trigger;
+package com.clearso.hermes.trigger;
 
 public enum HermesTriggerAction {
 

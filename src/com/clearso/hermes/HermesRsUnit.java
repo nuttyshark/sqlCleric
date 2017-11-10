@@ -1,4 +1,4 @@
-package org.naertui.hermes;
+package com.clearso.hermes;
 
 @SuppressWarnings("rawtypes")
 public class HermesRsUnit {

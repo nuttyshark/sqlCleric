@@ -1,10 +1,10 @@
-package org.naertui.hermes;
+package com.clearso.hermes;
 
 import java.util.Date;
 import java.util.HashMap;
 
-import org.naertui.hermes.types.HermesDay;
-import org.naertui.hermes.types.HermesIJson;
+import com.clearso.hermes.types.HermesDay;
+import com.clearso.hermes.types.HermesIJson;
 
 import com.alibaba.fastjson.JSONObject;
 

@@ -1,4 +1,4 @@
-package org.naertui.hermes.toolbox;
+package com.clearso.hermes.toolbox;
 
 import java.util.Random;
 

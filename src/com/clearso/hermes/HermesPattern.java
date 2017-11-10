@@ -1,4 +1,4 @@
-package org.naertui.hermes;
+package com.clearso.hermes;
 
 import java.util.function.Function;
 

@@ -1,11 +1,11 @@
-package org.naertui.hermes.types;
+package com.clearso.hermes.types;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import org.naertui.hermes.HermesException;
+import com.clearso.hermes.HermesException;
 
 import com.alibaba.fastjson.JSONObject;
 

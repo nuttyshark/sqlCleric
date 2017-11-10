@@ -1,6 +1,6 @@
-package org.naertui.hermes.trigger;
+package com.clearso.hermes.trigger;
 
-import org.naertui.hermes.HermesCURD;
+import com.clearso.hermes.HermesCURD;
 
 public abstract class HermesTriggerInst {
 

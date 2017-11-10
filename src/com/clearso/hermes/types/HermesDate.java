@@ -1,11 +1,11 @@
-package org.naertui.hermes.types;
+package com.clearso.hermes.types;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
-import org.naertui.hermes.HermesException;
+import com.clearso.hermes.HermesException;
 
 public class HermesDate {
 	

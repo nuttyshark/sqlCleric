@@ -1,4 +1,4 @@
-package org.naertui.hermes;
+package com.clearso.hermes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.naertui.hermes.types.HermesFilter;
+import com.clearso.hermes.types.HermesFilter;
 
 public interface HermesArray{
 	

@@ -1,7 +1,7 @@
-package org.naertui.hermes.helper;
+package com.clearso.hermes.helper;
 
-import org.naertui.hermes.HermesDbHolder;
-import org.naertui.hermes.HermesRetrieveBuilder;
+import com.clearso.hermes.HermesDbHolder;
+import com.clearso.hermes.HermesRetrieveBuilder;
 
 public class HRB extends HermesRetrieveBuilder {
 

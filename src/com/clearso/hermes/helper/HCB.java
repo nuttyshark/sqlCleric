@@ -1,7 +1,7 @@
-package org.naertui.hermes.helper;
+package com.clearso.hermes.helper;
 
-import org.naertui.hermes.HermesCreateBuilder;
-import org.naertui.hermes.HermesDbHolder;
+import com.clearso.hermes.HermesCreateBuilder;
+import com.clearso.hermes.HermesDbHolder;
 
 public class HCB extends HermesCreateBuilder {
 

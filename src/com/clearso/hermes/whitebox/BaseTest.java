@@ -1,4 +1,4 @@
-package org.naertui.hermes.whitebox;
+package com.clearso.hermes.whitebox;
 
 import static org.junit.Assert.*;
 

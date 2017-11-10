@@ -1,9 +1,9 @@
 package %java_package%;
 
-import org.naertui.hermes.HermesDbUnit;
-import org.naertui.hermes.HermesException;
-import org.naertui.hermes.HermesSqlVal;
-import org.naertui.hermes.HermesResultSet;
+import com.clearso.hermes.HermesDbUnit;
+import com.clearso.hermes.HermesException;
+import com.clearso.hermes.HermesSqlVal;
+import com.clearso.hermes.HermesResultSet;
 
 //auto import
 

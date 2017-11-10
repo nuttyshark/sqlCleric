@@ -1,4 +1,4 @@
-package org.naertui.hermes;
+package com.clearso.hermes;
 
 import java.io.FileInputStream;
 import java.sql.CallableStatement;
@@ -11,9 +11,9 @@ import java.util.Properties;
 
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.apache.tomcat.jdbc.pool.PoolProperties;
-import org.naertui.hermes.trigger.HermesTrigger;
-import org.naertui.hermes.trigger.HermesTriggerAction;
-//import org.naertui.hermes.trigger.HermesTriggerInst;
+import com.clearso.hermes.trigger.HermesTrigger;
+import com.clearso.hermes.trigger.HermesTriggerAction;
+//import com.clearso.hermes.trigger.HermesTriggerInst;
 
 public class HermesDbHolder {
 	

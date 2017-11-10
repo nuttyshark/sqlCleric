@@ -1,4 +1,4 @@
-package org.naertui.hermes;
+package com.clearso.hermes;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.function.Function;
 
-import org.naertui.hermes.types.HermesDate;
-import org.naertui.hermes.types.HermesDay;
-import org.naertui.hermes.types.HermesRange;
+import com.clearso.hermes.types.HermesDate;
+import com.clearso.hermes.types.HermesDay;
+import com.clearso.hermes.types.HermesRange;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;

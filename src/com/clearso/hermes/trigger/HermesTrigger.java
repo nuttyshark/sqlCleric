@@ -1,9 +1,9 @@
-package org.naertui.hermes.trigger;
+package com.clearso.hermes.trigger;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.naertui.hermes.HermesCURD;
+import com.clearso.hermes.HermesCURD;
 
 public class HermesTrigger {
 
