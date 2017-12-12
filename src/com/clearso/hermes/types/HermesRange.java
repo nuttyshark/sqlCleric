@@ -3,9 +3,7 @@ package com.clearso.hermes.types;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.alibaba.fastjson.JSONObject;
-
-public class HermesRange<T> implements HermesIJson{
+public class HermesRange<T>{
 	public T st;
 	public T ed;
 	public final int CLOSED = 0;
@@ -59,23 +57,6 @@ public class HermesRange<T> implements HermesIJson{
 			rb = rb + "]";
 		}
 		return rb;
-	}
-
-	@Override
-	public JSONObject toJSON() {
-		// TODO Auto-generated method stub
-		JSONObject jr = new JSONObject();
-		if(st instanceof HermesIJson){
-			jr.put("st", ((HermesIJson) st).toJSON());
-		}else{
-			jr.put("st", st);
-		}
-		if(ed instanceof HermesIJson){
-			jr.put("ed", ((HermesIJson) ed).toJSON());
-		}else{
-			jr.put("ed", ed);
-		}
-		return jr;
 	}
 
 }

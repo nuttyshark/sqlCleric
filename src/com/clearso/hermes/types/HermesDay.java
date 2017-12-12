@@ -7,9 +7,8 @@ import java.util.Date;
 
 import com.clearso.hermes.HermesException;
 
-import com.alibaba.fastjson.JSONObject;
 
-public class HermesDay implements HermesIJson{
+public class HermesDay{
 	
 	public int day;
 	public int month;
@@ -112,14 +111,6 @@ public class HermesDay implements HermesIJson{
 	
 	public String toString(){
 		return year+"-"+month+"-"+day;
-	}
-
-	@Override
-	public JSONObject toJSON() {
-		// TODO Auto-generated method stub
-		JSONObject jr = new JSONObject();
-		jr.put("val", value);
-		return jr;
 	}
 	
 }

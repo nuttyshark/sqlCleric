@@ -38,18 +38,12 @@ public class HermesRetrieveBuilder extends HermesCURD<HermesRetrieveBuilder> {
 		}
 		
 	}
-	/*
-	public HermesRetrieveBuilder(){
-		super();
-	}
-	*/
 
-	public HermesRetrieveBuilder(HermesDbHolder da){
-		super(da);
+	public HermesRetrieveBuilder(){
 	}
 	
-	public HermesRetrieveBuilder(HermesDbHolder da, HermesDbConf conf){
-		super(da, conf);
+	public HermesRetrieveBuilder(HermesDbConf conf){
+		super(conf);
 		Clear();
 	}
 	

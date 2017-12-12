@@ -5,8 +5,6 @@ public abstract class HermesDbUnit {
 	protected static String table_prefix_default = "";
 	protected String tablePrefix;
 	
-	protected HermesDbHolder dc;
-	
 	public static void SetTablePrefixDefault(String prefix){
 		table_prefix_default = prefix;
 	}

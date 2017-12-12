@@ -14,15 +14,10 @@ public abstract class HermesCURD <T>extends HermesDbTaskBuilder {
 	protected boolean condNeed = true;
 	
 	public HermesCURD(){
-		//this(HermesDbHolder.GetInstance());
-	}
-	
-	public HermesCURD(HermesDbHolder da){
-		this(da, defaultConf());
+		this(defaultConf());
 	}
 
-	public HermesCURD(HermesDbHolder da, HermesDbConf conf){
-		dbHolder = da;
+	public HermesCURD(HermesDbConf conf){
 		this.conf = conf;
 	}
 	

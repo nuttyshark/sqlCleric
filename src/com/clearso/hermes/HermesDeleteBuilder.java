@@ -4,17 +4,6 @@ package com.clearso.hermes;
 
 public class HermesDeleteBuilder extends HermesCURD<HermesDeleteBuilder> {
 	
-	/*
-	public HermesDeleteBuilder() throws HermesException, SQLException{
-		//maybe bug here
-		//this(HermesDbHolder.GetInstance());
-	}
-	*/
-	
-	public HermesDeleteBuilder(HermesDbHolder da){
-		super(da);
-	}
-	
 	public HermesDeleteBuilder Src(int src){
 		srcList.add(conf.Get(src));
 		return this;

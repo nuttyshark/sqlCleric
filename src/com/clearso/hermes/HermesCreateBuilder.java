@@ -11,10 +11,6 @@ public class HermesCreateBuilder extends HermesCURD<HermesCreateBuilder> {
 	}
 	*/
 	
-	public HermesCreateBuilder(HermesDbHolder da){
-		super(da);
-	}
-	
 	public HermesCreateBuilder Load(HermesDbUnit src){
 		srcList.add(src);
 		return this;
@@ -42,10 +38,6 @@ public class HermesCreateBuilder extends HermesCURD<HermesCreateBuilder> {
 		sql.append(" (").append(col_sql).append(") VALUES (").append(val_sql).append(")").append(buildRet());
 		
 		return sql.toString();
-	}
-	
-	public void Die(){
-		dbHolder.die();
 	}
 
 	@Override

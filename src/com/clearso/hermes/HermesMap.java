@@ -4,8 +4,6 @@ import java.util.Date;
 import java.util.HashMap;
 
 import com.clearso.hermes.types.HermesDay;
-import com.clearso.hermes.types.HermesIJson;
-
 import com.alibaba.fastjson.JSONObject;
 
 public class HermesMap extends HashMap<String, Object> {
@@ -143,30 +141,6 @@ public class HermesMap extends HashMap<String, Object> {
 			put(prefix+key, src.get(key));
 		}
 		return this;
-	}
-	
-	public JSONObject toJSON(){
-		JSONObject rt = new JSONObject();
-		for(String key:keySet()){
-			Object r = get(key);
-			if(r instanceof HermesIJson){
-				rt.put(key, ((HermesIJson) r).toJSON());
-			}else{
-				rt.put(key, r);
-			}
-		}
-		return rt;
-		//return (JSONObject)JSON.toJSON(this);
-	}
-	
-	public String toJSONString(){
-		return toJSON().toJSONString();
-		//return JSON.toJSONString(this);
-	}
-
-	@Override
-	public String toString(){
-		return toJSONString();
 	}
 	
 }

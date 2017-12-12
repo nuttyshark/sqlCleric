@@ -9,15 +9,8 @@ public class HermesUpdateBuilder extends HermesCURD<HermesUpdateBuilder>{
 	ArrayList<HermesPattern<Integer>> colPattern = new ArrayList<HermesPattern<Integer>>();
 	ArrayList<Integer> colOff = new ArrayList<Integer>();
 	
-	/*
-	public HermesUpdateBuilder() throws HermesException, SQLException{
-		//maybe bug here
-		//this(HermesDbHolder.GetInstance());
-	}
-	*/
-	
-	public HermesUpdateBuilder(HermesDbHolder da){
-		super(da);
+	public HermesUpdateBuilder(){
+		
 	}
 
 	@Override
