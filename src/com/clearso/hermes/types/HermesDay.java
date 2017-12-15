@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import com.clearso.hermes.HermesException;
+import com.clearso.hermes.core.HermesException;
 
 
 public class HermesDay{

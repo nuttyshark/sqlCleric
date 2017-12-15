@@ -1,9 +1,9 @@
 package %java_package%;
 
-import com.clearso.hermes.HermesDbUnit;
-import com.clearso.hermes.HermesException;
-import com.clearso.hermes.HermesSqlVal;
-import com.clearso.hermes.HermesResultSet;
+import com.clearso.hermes.core.HermesDbUnit;
+import com.clearso.hermes.core.HermesException;
+import com.clearso.hermes.core.HermesSqlVal;
+import com.clearso.hermes.core.HermesResultSet;
 
 //auto import
 
@@ -78,36 +78,6 @@ public class _Hu{{#0$model}} extends HermesDbUnit {
 		}
 		return this;
 	}
-
-    public void Load(HermesMap jr, Integer...cols){
-        for(Integer col:cols){
-            if(!ValidCol(col)){
-                throw new HermesException("Invalid col index");
-            }
-            
-            switch(col){
-{{#12            case _$var:
-                if(jr.containsKey("$col")){
-                   $var = $stjr.get$type"$col")$ed;
-                }
-                break;}}
-            default:
-                break;
-            }
-        }
-    }
-
-    public static Object Load(HermesResultSet rs, int col){
-        Object rt = null;
-        switch(col){
-{{#13        case _$var:
-            rt = $strs.Get$type)$ed;
-            break;}}
-        default:
-            break;
-        }
-        return rt;
-    }
 
 	@Override
 	public String Tag() {

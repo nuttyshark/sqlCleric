@@ -12,9 +12,9 @@ import_map = {
     'ArrayList':'java.util.ArrayList',
     'Arrays':'java.util.Arrays',
     'JSONObject':'com.alibaba.fastjson.JSONObject',
-    'HermesArray':'com.clearso.hermes.HermesArray',
+    'HermesArray':'com.clearso.hermes.types.HermesArray',
     'HermesRange':'com.clearso.hermes.types.HermesRange',
-    'HermesMap':'com.clearso.hermes.HermesMap',
+    'HermesMap':'com.clearso.hermes.types.HermesMap',
     'HermesDay':'com.clearso.hermes.types.HermesDay'
 }
 
@@ -29,52 +29,6 @@ def java_var(col, upper_first = False):
         if word_set[i][0] >= 'a' and word_set[i][0] <= 'z':
             res_str = res_str + word_set[i][0].upper() + word_set[i][1:]
     return res_str
-
-def map_model(unit):
-    b_dict = {}
-    try:
-        b_dict[0] = [{'model':java_var(unit['model'], True)}]
-    except:
-        return None
-    b_dict[2] = [{'unit':java_var(unit['hu'], True)}]
-    b_dict[1] = []
-    b_dict[3] = []
-    b_dict[4] = []
-    b_dict[5] = []
-    b_dict[7] = []
-    b_dict[8] = []
-    b_dict[9] = []
-    b_dict[10] = []
-    b_dict[11] = []
-    b_dict[12] = []
-    for col in unit['cols']:
-        if not col['auto']:
-            b_dict[1].append({'type':col['type']['gen'],
-                              'col_name':java_var(col['name'])})
-            b_dict[3].append({'var':java_var(col['name'], True),
-                              'trans':java_var(col['name'])})
-        if col['ret']:
-            b_dict[4].append({'ret_col':java_var(col['name'], True)})
-            b_dict[5].append({'ret_type':java_var(col['type']['gen'])})
-            b_dict[10].append({'ret_var':java_var(col['name'])})
-        if (not 'detail' in col['attr']) and (not 'ne' in col['attr']) and (not 'wo' in col['attr']):
-            b_dict[7].append({'unit':java_var(unit['hu'], True),
-                              'col':java_var(col['name'], True)})
-            b_dict[8].append({'cname':col['name'],
-                              'unit':java_var(unit['hu'], True),
-                              'col':java_var(col['name'], True)})
-        if (not 'ne' in col['attr']) and (not 'ro' in col['attr']) and not col['ret']:
-            b_dict[9].append({'unit':java_var(unit['hu'], True),
-                              'col':java_var(col['name'], True),
-                              'key':col['name']})
-        if (not 'ne' in col['attr']) and (not 'wo' in col['attr']):
-            b_dict[11].append({'unit':java_var(unit['hu'], True),
-                              'col':java_var(col['name'], True)})
-            b_dict[12].append({'cname':col['name'],
-                               'unit':java_var(unit['hu'], True),
-                               'col':java_var(col['name'], True)})
-            
-    return b_dict
 
 def map_hu(unit):
     global tbl_offset
@@ -118,37 +72,11 @@ def map_hu(unit):
         b_dict[11].append({
                 'var':java_var(col['name'], True)
                 })
-        if True:
-            b_dict[9].append({
-                'var':java_var(col['name'], True),
-                'tyg':col['type']['tyg'],
-                'type':col['type']['gen']
-            })
-            for i in range(12, 14):
-                if i == 12:
-                    if 'ro' in col['attr']:
-                        continue;
-                    dmap = analyse.json_map
-                else:
-                    dmap = analyse.rs_map
-                mp_dict = None
-                for k in dmap:
-                    if col['type']['gen'].startswith(k):
-                        import copy
-                        mp_dict = copy.deepcopy(dmap[k])
-                        mp_dict['st'] = mp_dict['st'].replace('$type', col['type']['base'])
-                        mp_dict['type'] = mp_dict['type'].replace('$type', col['type']['base'])
-                        mp_dict['ed'] = mp_dict['ed'].replace('$type', col['type']['base'])
-                        break
-                if mp_dict == None:
-                    mp_dict = {
-                        'st':'',
-                        'ed':'',
-                        'type':col['type']['base']+'('
-                    }
-                mp_dict['var'] = java_var(col['name'], True)
-                mp_dict['col'] = col['name']
-                b_dict[i].append(mp_dict)
+        b_dict[9].append({
+            'var':java_var(col['name'], True),
+            'tyg':col['type']['tyg'],
+            'type':col['type']['gen']
+        })
         vindex = vindex + 1
     b_dict[2] = [{
             'offset':tbl_offset
@@ -188,39 +116,6 @@ def write_hu(dc, pack):
         os.makedirs(code_dir+'/'+pack)
     open(code_dir+'/'+pack+'/_Hu'+java_var(unit['hu'], True)+'.java', 'w').write(res)
     ins_conf.append(pack+'._Hu'+java_var(unit['hu'], True))
-    
-def write_model(dc):
-    if dc != None:
-        res = tpl.load_tpl(open('_model.java.tpl').read(), dc)
-        for key in import_map:
-            if res.find(key) != -1:
-                res_g = res.split('//auto import')
-                res = res_g[0] + '//auto import\nimport ' + import_map[key] + ';' + res_g[1]
-        try:
-            fr = open(model_dir+'Model'+java_var(unit['model'], True)+'.java')
-            old_body = fr.read()
-            fr.close()
-            pattern = re.compile('(//udef-[a-z0-9A-Z]+)')
-            udefs = pattern.findall(res)
-            udef_set = []
-            for udef in udefs:
-                for udef2 in udef_set:
-                    if udef == udef2:
-                        raise 'same udef value' + udef + " in " + unit['model']
-                udef_set.append(udef)
-                rb = res.split(udef)
-                rb_append = ''
-                st = old_body.find(udef)
-                if st != -1:
-                    sr = old_body[st:]
-                    ed = sr.find('//uend')
-                    if ed != -1:
-                        rb_append = sr[:ed]
-                rb_append = udef + rb_append.replace(udef, '')
-                res = rb[0] + rb_append + '//uend' + rb[1]
-        except:
-            pass
-        open(model_dir+'Model'+java_var(unit['model'], True)+'.java', 'w').write(res)
 
 def clean_gen():
     lf = os.listdir(code_dir)

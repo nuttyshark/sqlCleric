@@ -2,7 +2,7 @@ package com.clearso.hermes.types;
 
 import java.util.Date;
 
-import com.clearso.hermes.HermesException;
+import com.clearso.hermes.core.HermesException;
 
 public class HermesFilter<T> {
 	public static final int INT4 = 0;

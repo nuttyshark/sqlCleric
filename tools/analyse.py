@@ -1,3 +1,5 @@
+import re
+
 unit_flag = "@unit"
 sql_key = ['PRIMARY KEY', 'UNIQUE', 'CHECK']
 type_map = {
@@ -15,34 +17,6 @@ type_map = {
     'DATE':'HermesDay'
 }
 
-json_map = {
-    'List':{
-        'st':'Arrays.asList(',
-        'type':'Array($type.class, ',
-        'ed':')'
-    },
-    'HermesRange':{
-        'st':'new HermesRange<$type>().Parse($type.class, ',
-        'type':'String(',
-        'ed':')'
-    }
-}
-
-rs_map = {
-    'List':{
-        'st':'HermesArray.parse($type.class, ',
-        'type':'String(',
-        'ed':')'
-    },
-    'HermesRange':{
-        'st':'new HermesRange<$type>().Parse($type.class, ',
-        'type':'String(',
-        'ed':')'
-    }
-}
-
-import re
-
 def analyse_type(src):
     type_got = {}
     for key in type_map:
@@ -50,7 +24,7 @@ def analyse_type(src):
         if src.startswith(key):
             if key == 'DATE':
                 if src.startswith('DATERANGE'):
-                    continue;
+                    continue
             type_got['base'] = type_map[key]
             if type_got['base'].startswith("HermesRange"):
                 type_got['gen'] = type_got['base']
@@ -107,7 +81,7 @@ def analyse_block(parm, hu, model):
         tbl_cont['prefix'] = m[0]
         name = m[1]
     else:
-        tb_conf['prefix']= ''
+        tbl_cont['prefix']= ''
     tbl_cont['tag'] = name
     if hu==None:
         tbl_cont['hu'] = name
@@ -138,7 +112,7 @@ def analyse_file(file_name):
     f_sql = open(file_name)
     read_set = f_sql.readlines()
     block_text = ""
-    in_analyse = False;
+    in_analyse = False
     tpls = []
     hu_found = None
     model_found = None
