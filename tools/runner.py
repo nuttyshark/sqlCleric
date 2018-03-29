@@ -96,7 +96,7 @@ def map_hu(unit):
 import os
 
 def write_hu(dc, pack):
-    res = tpl.load_tpl(open('_hu.java.tpl').read(), dc)
+    res = tpl.load_tpl(open(tpl_dir+'/_hu.java.tpl').read(), dc)
     if pack != '':
         res = res.replace('%java_package%', java_package+'.'+pack)
     else:
@@ -145,7 +145,7 @@ if __name__ == '__main__':
             if model_dir != None:
                 dc = map_model(unit)
                 write_model(dc)
-    f = open(code_dir + '_Hconf.java', 'r')
+    f = open(code_dir + '/_Hconf.java', 'r')
     e = f.read()
     f.close()
     x = e.split('//--auto load')
@@ -167,7 +167,10 @@ if __name__ == '__main__':
         y = x[1].split('//--end imp')
         e = x[0] + '//--auto imp\n'
         for impe in imp:
-            e = e + 'import '+java_package+'.'+impe+'.*;\n'
+            if len(impe)<2:
+                e = e + 'import '+java_package+'.*;\n'
+            else:
+                e = e + 'import '+java_package+'.'+impe+'.*;\n'
         e = e + '//--end imp' + y[1]
     f = open(code_dir + '_Hconf.java', 'w')
     f.write(e)

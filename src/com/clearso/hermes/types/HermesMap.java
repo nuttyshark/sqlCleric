@@ -3,7 +3,6 @@ package com.clearso.hermes.types;
 import java.util.Date;
 import java.util.HashMap;
 
-import com.alibaba.fastjson.JSONObject;
 import com.clearso.hermes.core.HermesException;
 
 public class HermesMap extends HashMap<String, Object> {
@@ -119,15 +118,7 @@ public class HermesMap extends HashMap<String, Object> {
 	public<T> T[] getArray(Class<T> cls, String key, boolean need){
 		return (T[])get(key, need);
 	}
-	
-	public JSONObject getJSONObject(String key){
-		return getJSONObject(key, false);
-	}
-	
-	public JSONObject getJSONObject(String key, boolean need){
-		return (JSONObject)get(key, need);
-	}
-	
+
 	public Boolean getBoolean(String key){
 		return getBoolean(key, false);
 	}

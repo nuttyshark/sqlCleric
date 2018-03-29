@@ -1,7 +1,5 @@
 package com.clearso.hermes.core;
 
-//import java.sql.SQLException;
-
 public class HermesCreateBuilder extends HermesCURD<HermesCreateBuilder> {
 	
 	public HermesCreateBuilder Load(HermesDbUnit src){
@@ -35,7 +33,6 @@ public class HermesCreateBuilder extends HermesCURD<HermesCreateBuilder> {
 
 	@Override
 	protected void _clear() {
-		// TODO Auto-generated method stub
 		
 	}
 	

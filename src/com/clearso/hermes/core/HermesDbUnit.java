@@ -37,7 +37,11 @@ public abstract class HermesDbUnit {
 	public abstract String Tag();
 	
 	public String TableName(){
-		return tablePrefix + Tag();
+		if(tablePrefix.length() > 1) {
+			return tablePrefix + Tag();
+		}else{
+			return Tag();
+		}
 	}
 	
 	public boolean ValidCol(int index){

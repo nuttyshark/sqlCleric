@@ -7,6 +7,7 @@ type_map = {
     'BIGINT':'Long',
     'BOOLEAN':'Boolean',
     'JSONB':'JSONObject',
+    'timestamp':'Date',
     'timestamptz':'Date',
     'DOUBLE PRECISION':'Double',
     'INT4RANGE':'HermesRange<Integer>',
@@ -76,7 +77,7 @@ def analyse_block(parm, hu, model):
     tbl_cont = {}
     pattern = re.compile('.*\\s(\\S+)\\s*\\(')
     name = pattern.match(parm).group(1)
-    if name.find('.'):
+    if name.find('.') != -1:
         m = name.split('.')
         tbl_cont['prefix'] = m[0]
         name = m[1]
@@ -117,6 +118,7 @@ def analyse_file(file_name):
     hu_found = None
     model_found = None
     for line in read_set:
+        line = line.replace('`', '')
         if line.find(unit_flag) != -1:
             in_analyse = True
             block_text = ""

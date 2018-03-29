@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-import com.alibaba.fastjson.JSONObject;
 import com.clearso.hermes.types.HermesArray;
 
 public class HermesSqlVal {
@@ -48,9 +47,7 @@ public class HermesSqlVal {
 				}
 				this.val = sb.append(")").toString();
 			}else if(r instanceof Date){
-				this.val = "TO_TIMESTAMP("+((Date)r).getTime()/1000+")";
-			}else if(r instanceof JSONObject){
-				this.val = "'"+((JSONObject)r).toJSONString()+"'::jsonb";
+				this.val = "FROM_UNIXTIME("+((Date)r).getTime()/1000+")";
 			}else{
 				this.val = "'"+r.toString()+"'";
 			}

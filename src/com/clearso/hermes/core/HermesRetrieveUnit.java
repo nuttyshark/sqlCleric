@@ -33,31 +33,31 @@ public class HermesRetrieveUnit extends HermesDbUnit {
 
 	@Override
 	public String Tag() {
-		// TODO Auto-generated method stub
+		
 		return tag;
 	}
 
 	@Override
 	public int Offset() {
-		// TODO Auto-generated method stub
+		
 		return 1000000;
 	}
 
 	@Override
 	public HermesDbUnit Clear() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public int ColNum() {
-		// TODO Auto-generated method stub
+		
 		return cols.size();
 	}
 
 	@Override
 	public String ColName(int index, boolean prefix) {
-		// TODO Auto-generated method stub
+		
 		if(ValidCol(index)){
 			index -= Offset();
 			if(prefix){
@@ -72,7 +72,7 @@ public class HermesRetrieveUnit extends HermesDbUnit {
 
 	@Override
 	public String Var(int index) {
-		// TODO Auto-generated method stub
+		
 		if(ValidCol(index)){
 			index -= Offset();
 			return cols.get(index);
@@ -83,13 +83,13 @@ public class HermesRetrieveUnit extends HermesDbUnit {
 
 	@Override
 	public HermesDbUnit Col(int index, Object val) throws HermesException {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public int HasCol(String col) {
-		// TODO Auto-generated method stub
+		
 		int index = HermesArray.find(cols, r -> {
 			return r.equals(col);
 		});

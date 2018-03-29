@@ -6,11 +6,11 @@ import com.clearso.hermes.types.HermesArray;
 
 public class HermesRetrieveBuilder extends HermesCURD<HermesRetrieveBuilder> {
 	
-	public final int JOIN_NORMAL = 0;
-	public final int JOIN_LEFT = 1;
-	public final int JOIN_RIGHT = 2;
-	public final int JOIN_FULL = 3;
-	public final int JOIN_UNION = 4;
+	public final static int JOIN_NORMAL = 0;
+	public final static int JOIN_LEFT = 1;
+	public final static int JOIN_RIGHT = 2;
+	public final static int JOIN_FULL = 3;
+	public final static int JOIN_UNION = 4;
 	
 	private ArrayList<joinLink> srcLink = new ArrayList<joinLink>();
 
@@ -284,13 +284,13 @@ public class HermesRetrieveBuilder extends HermesCURD<HermesRetrieveBuilder> {
 
 
 	public ArrayList<String> GetCols() {
-		// TODO Auto-generated method stub
+		
 		return colAlias;
 	}
 	
 	@Override
 	protected void _clear() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 }

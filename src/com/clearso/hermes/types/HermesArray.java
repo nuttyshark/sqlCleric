@@ -10,7 +10,7 @@ import com.clearso.hermes.core.HermesSqlVal;
 
 public interface HermesArray{
 	
-	public static<T> ArrayList<T> parse(Class<T> a, String src){
+	static<T> ArrayList<T> parse(Class<T> a, String src){
 		HermesFilter<T> fl = new HermesFilter<T>(a);
 		ArrayList<T> array = new ArrayList<T>();
 		Pattern pattern = Pattern.compile("^\\s*\\{([^\\}]*)\\}\\s*$");
@@ -25,7 +25,7 @@ public interface HermesArray{
 		return array;
 	}
 	
-	public static String sqlSet(List<?> p){
+	static String sqlSet(List<?> p){
 		StringBuilder rt = null;
 		for(Object t: p){
 			if(rt == null){
@@ -41,7 +41,7 @@ public interface HermesArray{
 		return rt.toString();
 	}
 	
-	public static String toSql(Object[] t, Function<Object, String> cvt){
+	static String toSql(Object[] t, Function<Object, String> cvt){
 		StringBuilder rt = null;
 		for(Object elem:t){
 			if(rt == null){
@@ -57,7 +57,7 @@ public interface HermesArray{
 		return rt.toString();
 	}
 		
-	public static String toString(List<?> p, Function<Object, String> consumer){
+	static String toString(List<?> p, Function<Object, String> consumer){
 		StringBuilder rt = null;
 		for(Object t:p){
 			if(rt == null){
@@ -70,7 +70,7 @@ public interface HermesArray{
 		return rt.toString();
 	}
 	
-	public static<T> int find(List<T> p, Function<T, Boolean> consumer){
+	static<T> int find(List<T> p, Function<T, Boolean> consumer){
 		int i=0;
 		for(T t:p){
 			if(consumer.apply(t)){

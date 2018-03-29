@@ -3,7 +3,6 @@ package %java_package%;
 import com.clearso.hermes.core.HermesDbUnit;
 import com.clearso.hermes.core.HermesException;
 import com.clearso.hermes.core.HermesSqlVal;
-import com.clearso.hermes.core.HermesResultSet;
 
 //auto import
 
@@ -29,20 +28,17 @@ public class _Hu{{#0$model}} extends HermesDbUnit {
 
     @Override
     public _Hu{{#0$model}} Clear() {
-        // TODO Auto-generated method stub
 {{#8        $var = null;}}
         return this;
     }
 	
     @Override
     public int ColNum() {
-        // TODO Auto-generated method stub
         return _colNum;
     }
 
     @Override
     public String ColName(int index, boolean prefix) {
-        // TODO Auto-generated method stub
         if(ValidCol(index)){
             index -= _Offset;
             if(prefix){
@@ -58,7 +54,6 @@ public class _Hu{{#0$model}} extends HermesDbUnit {
     [[?0@SuppressWarnings("unchecked")]]
     @Override
     public HermesDbUnit Col(int index, Object val){
-        // TODO Auto-generated method stub
         boolean success = false;
         if(!ValidCol(index)){
             throw new HermesException("Invalid col index");
@@ -81,13 +76,11 @@ public class _Hu{{#0$model}} extends HermesDbUnit {
 
 	@Override
 	public String Tag() {
-		// TODO Auto-generated method stub
 		return "{{#10$table}}";
 	}
 
 	@Override
 	public int HasCol(String col) {
-		// TODO Auto-generated method stub
 		for(int i=0; i<_colName.length; i++){
 			if(_colName[i].equals(col)){
 				return i+_Offset;
@@ -98,13 +91,11 @@ public class _Hu{{#0$model}} extends HermesDbUnit {
 
 	@Override
 	public int Offset() {
-		// TODO Auto-generated method stub
 		return _Offset;
 	}
 
 	@Override
 	public String Var(int index) {
-		// TODO Auto-generated method stub
 		Object rt = null;
 		if(!ValidCol(index)){
 			throw new HermesException("Invalid col index");
