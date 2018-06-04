@@ -23,8 +23,9 @@ public abstract class HermesCURD <T>extends HermesDbTaskBuilder {
 		this.conf = conf;
 	}
 	
-	public void NullCond(){
+	public T NullCond(){
 		condNeed = false;
+		return (T)this;
 	}
 
 	@SuppressWarnings("unchecked")
