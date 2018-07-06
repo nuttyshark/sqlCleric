@@ -69,5 +69,7 @@ public abstract class HermesDbUnit {
 	public abstract HermesDbUnit Col(int index, Object val) throws HermesException;
 	
 	public abstract int HasCol(String col);
+
+	public abstract HermesDbUnit clone();
 		
 }

@@ -96,4 +96,8 @@ public class HermesRetrieveUnit extends HermesDbUnit {
 		return index;
 	}
 
+	@Override
+	public HermesDbUnit clone() {
+		return null;
+	}
 }

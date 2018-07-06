@@ -27,6 +27,11 @@ public class _Hu{{#0$model}} extends HermesDbUnit {
     }
 
     @Override
+    public HermesDbUnit clone(){
+        return new _Hu{{#0$model}}();
+    }
+
+    @Override
     public _Hu{{#0$model}} Clear() {
 {{#8        $var = null;}}
         return this;
