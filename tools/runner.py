@@ -118,6 +118,7 @@ def write_hu(dc, pack):
     ins_conf.append(pack+'._Hu'+java_var(unit['hu'], True))
 
 def clean_gen():
+    print 'path:' + os.getcwd()
     lf = os.listdir(code_dir)
     for fl in lf:
         sdir = code_dir+'/'+fl
@@ -128,7 +129,24 @@ def clean_gen():
                     os.remove(sdir+'/'+fee)
             os.rmdir(sdir)
 
+import sys
+
 if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        # replace param
+        if len(sys.argv) < 5:
+            print 'generated failed'
+        else:
+            db_dir = sys.argv[1]
+            code_dir = sys.argv[2]
+            java_package = sys.argv[3]
+            sql_files = []
+            for i in range(4, len(sys.argv)):
+                sql_files.append(sys.argv[i])
+    print db_dir
+    print code_dir
+    print java_package
+    print sql_files
     clean_gen()
     ins_conf = []
     for f in sql_files:

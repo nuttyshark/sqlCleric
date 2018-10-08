@@ -10,6 +10,7 @@ type_map = {
     'timestamp':'Date',
     'timestamptz':'Date',
     'DOUBLE PRECISION':'Double',
+    'DECIMAL':'Double',
     'INT4RANGE':'HermesRange<Integer>',
     'INT8RANGE':'HermesRange<Long>',
     'INT':'Integer',
