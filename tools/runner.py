@@ -1,6 +1,8 @@
 import analyse
 import tpl
 
+from hermes_conf import *
+
 tbl_offset = 0
 import re
 
