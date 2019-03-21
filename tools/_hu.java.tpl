@@ -6,7 +6,7 @@ import com.clearso.hermes.core.HermesSqlVal;
 
 //auto import
 
-public class _Hu{{#0$model}} extends HermesDbUnit {
+public class Hu{{#0$model}} extends HermesDbUnit {
 
 {{#1    public $type $var = null;}}
 	
@@ -22,17 +22,17 @@ public class _Hu{{#0$model}} extends HermesDbUnit {
 
                                                         };
 	
-    public _Hu{{#0$model}}(){
+    public Hu{{#0$model}}(){
         super("{{#7$nspace}}.");
     }
 
     @Override
     public HermesDbUnit clone(){
-        return new _Hu{{#0$model}}();
+        return new Hu{{#0$model}}();
     }
 
     @Override
-    public _Hu{{#0$model}} Clear() {
+    public Hu{{#0$model}} Clear() {
 {{#8        $var = null;}}
         return this;
     }

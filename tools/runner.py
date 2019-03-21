@@ -114,8 +114,8 @@ def write_hu(dc, pack):
             res = re.sub('\[\[\?'+str(i)+'([^\d](.|\n)*?)\]\]', '', res)
     if not os.path.exists(code_dir + '/' + pack):
         os.makedirs(code_dir+'/'+pack)
-    open(code_dir+'/'+pack+'/_Hu'+java_var(unit['hu'], True)+'.java', 'w').write(res)
-    ins_conf.append(pack+'._Hu'+java_var(unit['hu'], True))
+    open(code_dir+'/'+pack+'/Hu'+java_var(unit['hu'], True)+'.java', 'w').write(res)
+    ins_conf.append(pack+'.Hu'+java_var(unit['hu'], True))
 
 def clean_gen():
     print 'path:' + os.getcwd()
@@ -163,7 +163,7 @@ if __name__ == '__main__':
             if model_dir != None:
                 dc = map_model(unit)
                 write_model(dc)
-    f = open(code_dir + '/_Hconf.java', 'r')
+    f = open(code_dir + '/Hconf.java', 'r')
     e = f.read()
     f.close()
     x = e.split('//--auto load')
@@ -190,6 +190,6 @@ if __name__ == '__main__':
             else:
                 e = e + 'import '+java_package+'.'+impe+'.*;\n'
         e = e + '//--end imp' + y[1]
-    f = open(code_dir + '_Hconf.java', 'w')
+    f = open(code_dir + 'Hconf.java', 'w')
     f.write(e)
     f.close()
