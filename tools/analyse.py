@@ -7,6 +7,7 @@ type_map = {
     'BIGINT':'Long',
     'BOOLEAN':'Boolean',
     'JSONB':'JSONObject',
+    'datetime':'Date',
     'timestamp':'Date',
     'timestamptz':'Date',
     'DOUBLE PRECISION':'Double',
